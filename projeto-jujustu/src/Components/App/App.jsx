@@ -1,20 +1,20 @@
-import './App.css'
-import '../Css/reset.css'
-import '../Css/response.css'
-import { useState } from 'react';
+import "./App.css";
+import "../Css/reset.css";
+import "../Css/response.css";
+import { useState } from "react";
+import selecionarPersonagem from "../SelecionarPersonagem/SelecionarPersonagem";
 
 function App() {
-
-  const [personagemSelecionado, setPersonagemSelecionado] = useState('Gojo');
-  
-  const selecionarPersonagem = (nome) =>{
-    setPersonagemSelecionado(nome);
-  }
+  const [personagemSelecionado, setPersonagemSelecionado] = useState("Gojo");
 
   return (
     <>
       <main className="personagens">
-        <div className={` personagem ${personagemSelecionado === 'Gojo' ? 'selecionado' : ' '}`}>
+        <div
+          className={` personagem ${
+            personagemSelecionado === "Gojo" ? "selecionado" : " "
+          }`}
+        >
           <picture>
             <source srcSet="src\imagens\gojo.png" media="(min-width:768px)" />
             <img src="src\imagens\gojo.png" alt="alt" />
@@ -36,7 +36,11 @@ function App() {
             </p>
           </div>
         </div>
-        <div className={` personagem ${personagemSelecionado === 'Sukuna' ? 'selecionado' : ' '}`}>
+        <div
+          className={` personagem ${
+            personagemSelecionado === "Sukuna" ? "selecionado" : " "
+          }`}
+        >
           <picture>
             <source srcSet="src\imagens\sukuna.png" />
             <img src="src\imagens\sukuna.png" alt="alt" />
@@ -61,7 +65,11 @@ function App() {
             </p>
           </div>
         </div>
-        <div className={` personagem ${personagemSelecionado === 'Toji' ? 'selecionado' : ' '}`}>
+        <div
+          className={` personagem ${
+            personagemSelecionado === "Toji" ? "selecionado" : " "
+          }`}
+        >
           <picture>
             <source srcSet="src\imagens\toji.png" />
             <img src="src\imagens\toji.png" alt="alt" />
@@ -87,7 +95,11 @@ function App() {
             </p>
           </div>
         </div>
-        <div className={` personagem ${personagemSelecionado === 'Yuji' ? 'selecionado' : ' '}`}>
+        <div
+          className={` personagem ${
+            personagemSelecionado === "Yuji" ? "selecionado" : " "
+          }`}
+        >
           <picture>
             <source srcSet="src\imagens\yuji.png" />
             <img src="src\imagens\yuji.png" alt="alt" />
@@ -118,22 +130,50 @@ function App() {
       </main>
       <ul className="botoes">
         <li>
-          <button className={`botao gojo ${personagemSelecionado === 'Gojo' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Gojo')}}>
+          <button
+            className={`botao gojo ${
+              personagemSelecionado === "Gojo" ? "selecionado" : ""
+            }`}
+            onClick={() => {
+              selecionarPersonagem("Gojo", setPersonagemSelecionado);
+            }}
+          >
             <img src="src\imagens\gojo-icon.png" alt="" />
           </button>
         </li>
         <li>
-          <button className={`botao Sukuna ${personagemSelecionado === 'Sukuna' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Sukuna')}}>
+          <button
+            className={`botao Sukuna ${
+              personagemSelecionado === "Sukuna" ? "selecionado" : ""
+            }`}
+            onClick={() => {
+              selecionarPersonagem("Sukuna", setPersonagemSelecionado);
+            }}
+          >
             <img src="src\imagens\sukuna-icon.png" alt="" />
           </button>
         </li>
         <li>
-          <button className={`botao Toji ${personagemSelecionado === 'Toji' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Toji')}}>
+          <button
+            className={`botao Toji ${
+              personagemSelecionado === "Toji" ? "selecionado" : ""
+            }`}
+            onClick={() => {
+              selecionarPersonagem("Toji", setPersonagemSelecionado);
+            }}
+          >
             <img src="src\imagens\toji-icon.png" alt="" />
           </button>
         </li>
         <li>
-          <button className={`botao Yuji ${personagemSelecionado === 'Yuji' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Yuji')}}>
+          <button
+            className={`botao Yuji ${
+              personagemSelecionado === "Yuji" ? "selecionado" : ""
+            }`}
+            onClick={() => {
+              selecionarPersonagem("Yuji", setPersonagemSelecionado);
+            }}
+          >
             <img src="src\imagens\yuji-icon.png" alt="" />
           </button>
         </li>
