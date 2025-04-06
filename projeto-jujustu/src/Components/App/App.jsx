@@ -1,13 +1,20 @@
 import './App.css'
 import '../Css/reset.css'
 import '../Css/response.css'
+import { useState } from 'react';
 
 function App() {
+
+  const [personagemSelecionado, setPersonagemSelecionado] = useState('Gojo');
+  
+  const selecionarPersonagem = (nome) =>{
+    setPersonagemSelecionado(nome);
+  }
 
   return (
     <>
       <main className="personagens">
-        <div className="personagem selecionado">
+        <div className={` personagem ${personagemSelecionado === 'Gojo' ? 'selecionado' : ' '}`}>
           <picture>
             <source srcSet="src\imagens\gojo.png" media="(min-width:768px)" />
             <img src="src\imagens\gojo.png" alt="alt" />
@@ -29,9 +36,9 @@ function App() {
             </p>
           </div>
         </div>
-        <div className="personagem">
+        <div className={` personagem ${personagemSelecionado === 'Sukuna' ? 'selecionado' : ' '}`}>
           <picture>
-            <source srcset="src\imagens\sukuna.png" />
+            <source srcSet="src\imagens\sukuna.png" />
             <img src="src\imagens\sukuna.png" alt="alt" />
           </picture>
           <div className="conteudo">
@@ -54,9 +61,9 @@ function App() {
             </p>
           </div>
         </div>
-        <div className="personagem">
+        <div className={` personagem ${personagemSelecionado === 'Toji' ? 'selecionado' : ' '}`}>
           <picture>
-            <source srcset="src\imagens\toji.png" />
+            <source srcSet="src\imagens\toji.png" />
             <img src="src\imagens\toji.png" alt="alt" />
           </picture>
           <div className="decricao">
@@ -80,9 +87,9 @@ function App() {
             </p>
           </div>
         </div>
-        <div className="personagem">
+        <div className={` personagem ${personagemSelecionado === 'Yuji' ? 'selecionado' : ' '}`}>
           <picture>
-            <source srcset="src\imagens\yuji.png" />
+            <source srcSet="src\imagens\yuji.png" />
             <img src="src\imagens\yuji.png" alt="alt" />
           </picture>
           <div className="descricao">
@@ -111,22 +118,22 @@ function App() {
       </main>
       <ul className="botoes">
         <li>
-          <button className="botao gojo selecionado">
+          <button className={`botao gojo ${personagemSelecionado === 'Gojo' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Gojo')}}>
             <img src="src\imagens\gojo-icon.png" alt="" />
           </button>
         </li>
         <li>
-          <button className="botao sukuna ">
+          <button className={`botao Sukuna ${personagemSelecionado === 'Sukuna' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Sukuna')}}>
             <img src="src\imagens\sukuna-icon.png" alt="" />
           </button>
         </li>
         <li>
-          <button className="botao toji ">
+          <button className={`botao Toji ${personagemSelecionado === 'Toji' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Toji')}}>
             <img src="src\imagens\toji-icon.png" alt="" />
           </button>
         </li>
         <li>
-          <button className="botao yuji ">
+          <button className={`botao Yuji ${personagemSelecionado === 'Yuji' ? 'selecionado' : '' }`} onClick={()=>{selecionarPersonagem('Yuji')}}>
             <img src="src\imagens\yuji-icon.png" alt="" />
           </button>
         </li>
